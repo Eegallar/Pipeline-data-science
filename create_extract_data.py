@@ -3,7 +3,6 @@ import numpy as np
 
 def generate_test_data():
     np.random.seed(42)
-    
     # Datos para MySQL (transacciones de ventas)
     sql_data = {
         'transaction_id': np.arange(1, 101),

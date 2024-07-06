@@ -1,6 +1,11 @@
 import pandas as pd
 import numpy as np
+from prefect import flow, task
 
+
+
+
+@task
 def generate_test_data():
     np.random.seed(42)
     # Datos para MySQL (transacciones de ventas)
@@ -37,3 +42,7 @@ def generate_test_data():
 
 # Llamada a la función para generar los datos
 generate_test_data()
+
+@flow
+def MainFlow():
+    generate_test_data()
